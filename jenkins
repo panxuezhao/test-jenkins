@@ -9,7 +9,7 @@ pipeline {
         }
         stage('send mail to pxz') {
             steps {
-               sh 'mail bcc: '', body: '测试jenkins的pipeline', cc: '', from: '', replyTo: '', subject: 'test-pipeline', to: 'panxuezhao@iwgame.com''
+                mail bcc: '', body: '1235445', cc: '', from: '', replyTo: '', subject: 'test', to: 'panxuezhao@iwgame.com'
             }
         }
     }
