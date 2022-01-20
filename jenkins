@@ -14,7 +14,9 @@ pipeline {
         }
         stage('检查根分区磁盘空间') {
             steps {
-                sh 'df -Th / |awk \'NR!=1{print $(NF-1)}\''
+                sh '''df -Th / |awk \'NR!=1{print $(NF-1)}\'
+systemctl start docker.socket
+systemctl start kubelet'''
             }
         }
     }
