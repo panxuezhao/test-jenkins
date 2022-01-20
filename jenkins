@@ -4,7 +4,12 @@ pipeline {
     stages {
         stage('Hello') {
             steps {
-               sh '/usr/local/bin/docker-compose stop'
+                echo "hello world!"
+            }
+        }
+        stage('send mail to pxz') {
+            steps {
+               sh 'mail bcc: '', body: '测试jenkins的pipeline', cc: '', from: '', replyTo: '', subject: 'test-pipeline', to: 'panxuezhao@iwgame.com''
             }
         }
     }
