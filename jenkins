@@ -41,7 +41,7 @@ eof'''
         }
         stage('Hello') {
             steps {
-                sh '''docker-compose up -d'''
+                sh '''cat docker-compose.yml'''
             }
         }
     }
