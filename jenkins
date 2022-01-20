@@ -39,7 +39,6 @@ volumes:
 eof'''
             }
         }
-    stages {
         stage('Hello') {
             steps {
                 sh '''docker-compose up -d'''
@@ -47,4 +46,3 @@ eof'''
         }
     }
 }
-
