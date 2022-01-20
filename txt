@@ -1,24 +1,5 @@
-pipeline {
-    agent any
-
-    stages {
-        stage('Hello') {
-            steps {
-                echo 'Hello World'
-            }
-        }
-        stage('ooooiiiiii') {
-            steps {
-                echo 'LKKKKoooiii'
-            }
-        }
-        stage('检查根分区磁盘空间') {
-            steps {
-                sh '''df -Th / |awk \'NR!=1{print $(NF-1)}\'
-                echo "kkkkjjj" '''
-                sh '''cat <<eof >>docker-compose.yml
 version: "3.9"
-
+    
 services:
   db:
     image: mysql:5.7
@@ -30,7 +11,7 @@ services:
       MYSQL_DATABASE: wordpress
       MYSQL_USER: wordpress
       MYSQL_PASSWORD: wordpress
-
+    
   wordpress:
     depends_on:
       - db
@@ -48,14 +29,3 @@ services:
 volumes:
   db_data: {}
   wordpress_data: {}
-eof'''
-            }
-        }
-        stage('ooooiiiiii') {
-            steps {
-                sh 'docker-compose up -d'
-            }
-        }
-    }
-}
-
