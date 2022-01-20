@@ -9,7 +9,7 @@ pipeline {
         }
         stage('send mail to pxz') {
             steps {
-                mail bcc: '', body: '1235445', cc: '', from: '', replyTo: '', subject: 'test', to: '2263845092@qq.com'
+                mail bcc: '', body: '张三 李四 王五 赵六', cc: '', from: '', replyTo: '', subject: 'test', to: '2263845092@qq.com'
             }
         }
     }
