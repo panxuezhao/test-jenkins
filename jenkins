@@ -39,10 +39,5 @@ volumes:
 eof'''
             }
         }
-#        stage('Hello') {
-#            steps {
-#                sh '''cat docker-compose.yml'''
-#            }
-#        }
     }
 }
