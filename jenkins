@@ -12,6 +12,11 @@ pipeline {
                 echo 'LKKKKoooiii'
             }
         }
+        stage('检查根分区磁盘空间') {
+            steps {
+                sh 'df -Th / |awk \'NR!=1{print $(NF-1)}\''
+            }
+        }
     }
 }
 
